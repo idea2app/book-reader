@@ -55,6 +55,7 @@ export default tsEslint.config(
                     noSortAlphabetically: true
                 }
             ],
+            '@typescript-eslint/no-explicit-any': 'warn',
             '@typescript-eslint/no-empty-object-type': 'off',
             '@typescript-eslint/no-unsafe-declaration-merging': 'warn'
         }
