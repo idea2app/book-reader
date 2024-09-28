@@ -17,7 +17,7 @@ const menu = [
     },
     {
         title: 'GitHub source',
-        href: 'https://github.com/EasyWebApp/WebCell-scaffold'
+        href: 'https://github.com/Open-Source-Bazaar/PaperBookReader'
     }
 ];
 
@@ -38,7 +38,7 @@ export const PageFrame = () => (
                         alt="WebCell"
                         src={WebCell_0}
                     />
-                    WebCell-scaffold
+                    PaperBookReader
                 </NavbarBrand>
             }
         >

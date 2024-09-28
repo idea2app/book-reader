@@ -1,5 +1,5 @@
 {
-    "name": "webcell-scaffold",
+    "name": "PaperBookReader",
     "version": "0.4.0",
     "description": "App Project scaffold of WebCell v3",
     "keywords": [
@@ -10,10 +10,10 @@
     ],
     "repository": {
         "type": "git",
-        "url": "git+https://github.com/EasyWebApp/WebCell-scaffold.git"
+        "url": "git+https://github.com/Open-Source-Bazaar/PaperBookReader.git"
     },
     "bugs": {
-        "url": "https://github.com/EasyWebApp/WebCell-scaffold/issues"
+        "url": "https://github.com/Open-Source-Bazaar/PaperBookReader/issues"
     },
     "dependencies": {
         "boot-cell": "^2.0.0-beta.29",

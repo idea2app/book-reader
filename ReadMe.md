@@ -1,12 +1,12 @@
 ![](src/image/WebCell-0.png)
 
-# WebCell-scaffold
+# PaperBookReader
 
 App Project scaffold of [WebCell][1] v3
 
 https://web-cell-scaffold.vercel.app/
 
-[![CI & CD](https://github.com/EasyWebApp/WebCell-scaffold/actions/workflows/main.yml/badge.svg)][2]
+[![CI & CD](https://github.com/Open-Source-Bazaar/PaperBookReader/actions/workflows/main.yml/badge.svg)][2]
 
 [![Open in GitHub Codespaces](https://github.com/codespaces/badge.svg)][3]
 [![Open in Gitpod](https://gitpod.io/button/open-in-gitpod.svg)][4]
@@ -54,9 +54,9 @@ pnpm build
 7.  Collect all these issues into [Project kanbans][20], then create **Pull requests** & add `closes #issue_number` into its description for automation
 
 [1]: https://web-cell.dev/
-[2]: https://github.com/EasyWebApp/WebCell-scaffold/actions/workflows/main.yml
-[3]: https://codespaces.new/EasyWebApp/WebCell-scaffold
-[4]: https://gitpod.io/?autostart=true#https://github.com/EasyWebApp/WebCell-scaffold
+[2]: https://github.com/Open-Source-Bazaar/PaperBookReader/actions/workflows/main.yml
+[3]: https://codespaces.new/Open-Source-Bazaar/PaperBookReader
+[4]: https://gitpod.io/?autostart=true#https://github.com/Open-Source-Bazaar/PaperBookReader
 [5]: https://typescriptlang.org/
 [7]: https://bootstrap.web-cell.dev/
 [8]: https://developers.google.com/web/tools/workbox
@@ -66,9 +66,9 @@ pnpm build
 [12]: https://github.com/apps/settings
 [13]: https://pullrequestbadge.com/
 [14]: https://code.visualstudio.com/
-[15]: https://github.com/new?template_name=WebCell-scaffold&template_owner=EasyWebApp
-[16]: https://github.com/EasyWebApp/WebCell-scaffold/blob/eaa710bc8d737a52bf726ebe339e2a29db7e3e04/.github/workflows/main.yml#L9-L11
-[17]: https://github.com/EasyWebApp/WebCell-scaffold/settings/secrets/actions
+[15]: https://github.com/new?template_name=PaperBookReader&template_owner=EasyWebApp
+[16]: https://github.com/Open-Source-Bazaar/PaperBookReader/blob/eaa710bc8d737a52bf726ebe339e2a29db7e3e04/.github/workflows/main.yml#L9-L11
+[17]: https://github.com/Open-Source-Bazaar/PaperBookReader/settings/secrets/actions
 [18]: https://github.com/kaiyuanshe/kaiyuanshe.github.io/blob/bb4675a56bf1d6b207231313da5ed0af7cf0ebd6/.github/workflows/pull-request.yml#L32-L56
-[19]: https://github.com/EasyWebApp/WebCell-scaffold/issues/new/choose
-[20]: https://github.com/EasyWebApp/WebCell-scaffold/projects
+[19]: https://github.com/Open-Source-Bazaar/PaperBookReader/issues/new/choose
+[20]: https://github.com/Open-Source-Bazaar/PaperBookReader/projects
