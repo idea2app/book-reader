@@ -1,24 +1,33 @@
-import { PageProps } from 'cell-router';
-import { FC } from 'web-cell';
+import { observable } from 'mobx';
+import { createWorker, RecognizeResult } from 'tesseract.js';
+import { component, observer } from 'web-cell';
 
-import { CellClock } from './Clock';
-import { Hello } from './Hello';
+import { CameraView } from '../component/Camera';
 
-export const HomePage: FC<PageProps> = props => (
-    <div {...props}>
-        <Hello name="WebCell" />
-        <div>
-            We use the same configuration as Parcel to bundle this sandbox, you
-            can find more info about Parcel{' '}
-            <a
-                href="https://parceljs.org"
-                target="_blank"
-                rel="noopener noreferrer"
-            >
-                here
-            </a>
-            .
-        </div>
-        <CellClock />
-    </div>
-);
+@component({ tagName: 'home-page' })
+@observer
+export class HomePage extends HTMLElement {
+    @observable
+    accessor result: RecognizeResult | undefined;
+
+    handleRecognize = async ({ detail }: CustomEvent<Blob>) => {
+        const worker = await createWorker('chi_tra', 1, {
+            logger: console.log
+        });
+        this.result = await worker.recognize(detail);
+
+        await worker.terminate();
+    };
+
+    render() {
+        return (
+            <>
+                <CameraView
+                    className="vh-100"
+                    onCapture={this.handleRecognize}
+                />
+                <pre>{JSON.stringify(this.result, null, 4)}</pre>
+            </>
+        );
+    }
+}
