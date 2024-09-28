@@ -1,5 +1,6 @@
+import { ProgressBar } from 'boot-cell';
 import { observable } from 'mobx';
-import { createWorker, RecognizeResult } from 'tesseract.js';
+import { createWorker, LoggerMessage } from 'tesseract.js';
 import { component, observer } from 'web-cell';
 
 import { CameraView } from '../component/Camera';
@@ -8,25 +9,39 @@ import { CameraView } from '../component/Camera';
 @observer
 export class HomePage extends HTMLElement {
     @observable
-    accessor result: RecognizeResult | undefined;
+    accessor currentProgress: LoggerMessage | undefined;
+
+    @observable
+    accessor resultText: string | undefined;
 
     handleRecognize = async ({ detail }: CustomEvent<Blob>) => {
-        const worker = await createWorker('chi_tra', 1, {
-            logger: console.log
+        const worker = await createWorker('chi_sim', 1, {
+            logger: message => (this.currentProgress = message)
         });
-        this.result = await worker.recognize(detail);
+        const { data } = await worker.recognize(detail);
 
+        this.resultText = data.text.replace(
+            /(?<=[\p{Script=Han}])\s+(?=[\p{Script=Han}])/gu,
+            ''
+        );
         await worker.terminate();
     };
 
     render() {
+        const { progress = 0, status } = this.currentProgress || {};
+        const precent = progress * 100;
+
         return (
             <>
                 <CameraView
                     className="vh-100"
                     onCapture={this.handleRecognize}
                 />
-                <pre>{JSON.stringify(this.result, null, 4)}</pre>
+                <ProgressBar
+                    now={precent}
+                    label={value => `${value}% ${status}`}
+                />
+                <p>{this.resultText}</p>
             </>
         );
     }

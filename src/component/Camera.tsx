@@ -19,10 +19,12 @@ export class CameraView
     });
 
     async init(video?: HTMLVideoElement) {
-        const { width, height } = getComputedStyle(video);
-
         const stream = await navigator.mediaDevices.getUserMedia({
-            video: { width: parseFloat(width), height: parseFloat(height) }
+            video: {
+                facingMode: 'environment',
+                width: { ideal: 1280 },
+                height: { ideal: 720 }
+            }
         });
 
         video.srcObject = stream;
