@@ -4,7 +4,7 @@
 
 App Project scaffold of [WebCell][1] v3
 
-https://web-cell-scaffold.vercel.app/
+https://pager-book-reader.pages.dev/
 
 [![CI & CD](https://github.com/Open-Source-Bazaar/PaperBookReader/actions/workflows/main.yml/badge.svg)][2]
 

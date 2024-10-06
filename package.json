@@ -1,6 +1,6 @@
 {
     "name": "@open-source-bazaar/paper-book-reader",
-    "version": "0.4.0",
+    "version": "0.5.0",
     "description": "App Project scaffold of WebCell v3",
     "keywords": [
         "web-component",
@@ -28,8 +28,8 @@
         "web-utility": "^4.4.0"
     },
     "devDependencies": {
-        "@eslint/compat": "^1.1.1",
-        "@eslint/js": "^9.11.1",
+        "@eslint/compat": "^1.2.0",
+        "@eslint/js": "^9.12.0",
         "@parcel/config-default": "~2.12.0",
         "@parcel/packager-raw-url": "~2.12.0",
         "@parcel/transformer-less": "~2.12.0",
@@ -39,11 +39,11 @@
         "@types/eslint-config-prettier": "^6.11.3",
         "@types/eslint__js": "^8.42.3",
         "@types/node": "^20.16.10",
-        "eslint": "^9.11.1",
+        "eslint": "^9.12.0",
         "eslint-config-prettier": "^9.1.0",
-        "eslint-plugin-react": "^7.37.0",
+        "eslint-plugin-react": "^7.37.1",
         "eslint-plugin-simple-import-sort": "^12.1.1",
-        "globals": "^15.9.0",
+        "globals": "^15.10.0",
         "husky": "^9.1.6",
         "lint-staged": "^15.2.10",
         "parcel": "~2.12.0",
@@ -52,7 +52,7 @@
         "prettier-plugin-css-order": "^2.1.2",
         "process": "^0.11.10",
         "typescript": "~5.6.2",
-        "typescript-eslint": "^8.7.0",
+        "typescript-eslint": "^8.8.0",
         "workbox-cli": "^7.1.0"
     },
     "prettier": {
