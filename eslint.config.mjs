@@ -15,6 +15,7 @@ export default tsEslint.config(
         plugins: {
             '@typescript-eslint': tsEslint.plugin,
             // https://github.com/jsx-eslint/eslint-plugin-react/issues/3699
+            // @ts-expect-error - Upstream issue
             react: fixupPluginRules(reactPlugin),
             'simple-import-sort': simpleImportSortPlugin
         }
@@ -31,11 +32,7 @@ export default tsEslint.config(
     // base config
     {
         languageOptions: {
-            globals: {
-                ...globals.es2020,
-                ...globals.browser,
-                ...globals.node
-            },
+            globals: { ...globals.es2020, ...globals.browser, ...globals.node },
             parserOptions: {
                 projectService: true,
                 tsconfigRootDir,
