@@ -1,24 +1,19 @@
 import { Button, ProgressBar, SpinnerBox } from 'boot-cell';
 import { observable } from 'mobx';
+import { SpeechSynthesisModel, SpeechSynthesisState } from 'mobx-i18n';
 import { component, observer } from 'web-cell';
-import { CustomElement } from 'web-utility';
 
 import { CameraView } from '../component/Camera';
 import { OCRModel } from '../model/OCR';
-import { TTSModel, TTSState } from '../model/TTS';
 
 @component({ tagName: 'home-page' })
 @observer
-export class HomePage extends HTMLElement implements CustomElement {
+export class HomePage extends HTMLElement {
     storeOCR = new OCRModel();
-    storeTTS = new TTSModel();
+    storeTTS = new SpeechSynthesisModel();
 
     @observable
     accessor cameraOpened = false;
-
-    connectedCallback() {
-        this.classList.add('d-flex', 'flex-column', 'gap-3', 'py-3');
-    }
 
     handleRecognition = ({ detail }: CustomEvent<Blob>) => {
         this.cameraOpened = false;
@@ -29,10 +24,12 @@ export class HomePage extends HTMLElement implements CustomElement {
     toggleSpeaking = () => {
         const { storeTTS } = this;
 
-        if (storeTTS.state !== TTSState.Clear) return storeTTS.toggle();
+        if (storeTTS.state !== SpeechSynthesisState.Clear)
+            return storeTTS.toggle();
 
-        const text = TTSModel.getReadableText(this.querySelector('article'));
-
+        const text = SpeechSynthesisModel.getReadableText(
+            this.querySelector('article')
+        );
         storeTTS.speak(text);
     };
 
@@ -40,10 +37,13 @@ export class HomePage extends HTMLElement implements CustomElement {
         const { storeOCR, storeTTS, cameraOpened } = this;
         const { uploading, currentPercent, resultText } = storeOCR;
         const recognizing = uploading > 0,
-            speaking = storeTTS.state === TTSState.Speaking;
+            speaking = storeTTS.state === SpeechSynthesisState.Speaking;
 
         return (
-            <SpinnerBox cover={recognizing}>
+            <SpinnerBox
+                className="d-flex flex-column gap-3 py-3"
+                cover={recognizing}
+            >
                 <header className="d-flex justify-content-around">
                     <Button
                         variant="danger"
