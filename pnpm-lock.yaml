@@ -10,13 +10,13 @@ importers:
     dependencies:
       boot-cell:
         specifier: ^2.0.0-beta.29
-        version: 2.0.0-beta.29(iterable-observer@1.1.0)(typescript@5.6.2)
+        version: 2.0.0-beta.29(core-js@3.38.1)(iterable-observer@1.1.0)(typescript@5.6.2)
       browser-unhandled-rejection:
         specifier: ^1.0.2
         version: 1.0.2
       cell-router:
         specifier: ^3.0.0-rc.8
-        version: 3.0.0-rc.8(typescript@5.6.2)
+        version: 3.0.0-rc.8(core-js@3.38.1)(typescript@5.6.2)
       classnames:
         specifier: ^2.5.1
         version: 2.5.1
@@ -29,12 +29,18 @@ importers:
       mobx:
         specifier: ^6.13.3
         version: 6.13.3
+      mobx-i18n:
+        specifier: ^0.6.0
+        version: 0.6.0(mobx@6.13.3)(typescript@5.6.2)
+      mobx-restful:
+        specifier: ^1.0.1
+        version: 1.0.1(mobx@6.13.3)(typescript@5.6.2)
       tesseract.js:
         specifier: ^5.1.1
         version: 5.1.1
       web-cell:
         specifier: ^3.0.0
-        version: 3.0.0(typescript@5.6.2)
+        version: 3.0.0(core-js@3.38.1)(typescript@5.6.2)
       web-utility:
         specifier: ^4.4.0
         version: 4.4.0(typescript@5.6.2)
@@ -1743,6 +1749,9 @@ packages:
   core-js-compat@3.38.1:
     resolution: {integrity: sha512-JRH6gfXxGmrzF3tZ57lFx97YARxCXPaMzPo6jELZhv88pBH5VXpQ+y0znKGlFnzuaihqhLbefxSJxWJMPtfDzw==}
 
+  core-js@3.38.1:
+    resolution: {integrity: sha512-OP35aUorbU3Zvlx7pjsFdu1rGNnD4pgw/CWoYzRY3t2EzoVT7shKHY1dlAy3f41cGIO7ZDPQimhGFTlEYkG/Hw==}
+
   cosmiconfig@9.0.0:
     resolution: {integrity: sha512-itvL5h8RETACmOTFc4UfIyB2RfEHi71Ax6E/PivVxq9NseKbOWpeyHEOIbmAw1rs8Ak0VursQNww7lf7YtUwzg==}
     engines: {node: '>=14'}
@@ -2070,6 +2079,10 @@ packages:
 
   fastq@1.17.1:
     resolution: {integrity: sha512-sRVD3lWVIXWg6By68ZN7vho9a1pQcN/WBFaAAsDDFzlJjvoGx0P8z7V1t72grFJfJhu3YPZBuu25f7Kaw2jN1w==}
+
+  fetch-blob@3.2.0:
+    resolution: {integrity: sha512-7yAQpD2UMJzLi1Dqv7qFYnPbaPx7ZfFK6PiIxQ4PfkGPyNyl2Ugx+a/umUonmKqjhM4DnfbMvdX6otXq83soQQ==}
+    engines: {node: ^12.20 || >= 14.13}
 
   figures@3.2.0:
     resolution: {integrity: sha512-yaduQFRKLXYOGgEn6AZau90j3ggSOyiqXU0F9JZfeXYhNa+Jk4X+s45A2zg5jns87GAFa34BBm2kXw4XpNcbdg==}
@@ -2623,6 +2636,11 @@ packages:
     resolution: {integrity: sha512-dcS1ul+9tmeD95T+x28/ehLgd9mENa3LsvDTtzm3vyBEO7RPptvAD+t44WVXaUjTBRcrpFeFlC8WCruUR456hw==}
     engines: {node: '>=0.10.0'}
 
+  koajax@3.0.2:
+    resolution: {integrity: sha512-2l6V9BSnil+3vxJSSi6rceOp73q6Iw8KYzu8Yfn0jEyxsGmVXt0rFvfd5BvEmnVZzDPQp7EzqusuQoTIsOx4cQ==}
+    peerDependencies:
+      jsdom: '>=21'
+
   latest-version@5.1.0:
     resolution: {integrity: sha512-weT+r0kTkRQdCdYCNtkMwWXQTMEswKrFBkm4ckQOMVhhqhIMI1UT2hMj+1iigIhgSZm5gTmrRXBNoGUgaTY1xA==}
     engines: {node: '>=8'}
@@ -2847,6 +2865,16 @@ packages:
   minimist@1.2.8:
     resolution: {integrity: sha512-2yyAR8qBkN3YuheJanUpWC5U3bb5osDywNB8RzDVlDwDHbocAJveqqj1u8+SVD7jkWT4yvsHCpWqqWqAxb0zCA==}
 
+  mobx-i18n@0.6.0:
+    resolution: {integrity: sha512-dooxek8Iq+RKbM0qGwCsAhQI/j8MtdwiC9gzFNzx+cCnn0bBDDgwK9Inie8UFw6XmOiy+T2kPzeaFvr72KLKQw==}
+    peerDependencies:
+      mobx: '>=6.11'
+
+  mobx-restful@1.0.1:
+    resolution: {integrity: sha512-jxX2anGxUc/E71pDAZn3SWjJhelRjNCbYHggccmSzawAEYI9AiKc0gwmPmifR0zwajVi3RpBzfqF4mQgt0TpCQ==}
+    peerDependencies:
+      mobx: '>=6.11'
+
   mobx@6.13.3:
     resolution: {integrity: sha512-YtAS+ZMbdpbHYUU4ESht3na8KiX11KuMT1yOiKtbKlQ0GZkHDYPKyEw/Tdp7h7aHyLrTWj2TBaSNJ6bCr638iQ==}
 
@@ -2868,6 +2896,10 @@ packages:
     engines: {node: ^10 || ^12 || ^13.7 || ^14 || >=15.0.1}
     hasBin: true
 
+  native-file-system-adapter@3.0.1:
+    resolution: {integrity: sha512-ocuhsYk2SY0906LPc3QIMW+rCV3MdhqGiy7wV5Bf0e8/5TsMjDdyIwhNiVPiKxzTJLDrLT6h8BoV9ERfJscKhw==}
+    engines: {node: '>=14.8.0'}
+
   natural-compare@1.4.0:
     resolution: {integrity: sha512-OWND8ei3VtNC9h7V60qff3SVobHr996CTwgxubgyQYEpg290h9J0buyECNNJexkFm5sOajh5G116RYA1c8ZMSw==}
 
@@ -2881,6 +2913,10 @@ packages:
 
   node-addon-api@7.1.1:
     resolution: {integrity: sha512-5m3bsyrjFWE1xf7nz7YXdN4udnVtXK6/Yfgn5qnahL6bCkf2yKt4k3nuTKAtT4r3IG8JNR2ncsIMdZuAzJjHQQ==}
+
+  node-domexception@1.0.0:
+    resolution: {integrity: sha512-/jKZoMpw0F8GRwl4/eLROPA3cfcXtLApP0QzLmUT/HuPCZWyB7IY9ZrMeKw2O/nFIqPQB3PVM9aYm0F312AXDQ==}
+    engines: {node: '>=10.5.0'}
 
   node-fetch@2.7.0:
     resolution: {integrity: sha512-c4FRfUm/dbcWZ7U+1Wq0AwCyFL+3nt2bEw05wfxSz+DWpWsitgmSgYmy2dQdWyKC1694ELPqMs/YzUSNozLt8A==}
@@ -3688,6 +3724,10 @@ packages:
       '@webcomponents/webcomponentsjs': ^2.8
       core-js: ^3
       jsdom: '>=23.1'
+
+  web-streams-polyfill@3.3.3:
+    resolution: {integrity: sha512-d2JWLCivmZYTSIoge9MsgFCZrt571BikcWGYkjC1khllbTeDlGqZ2D8vD8E/lJa8WGWbb7Plm8/XJYV7IJHZZw==}
+    engines: {node: '>= 8'}
 
   web-streams-polyfill@4.0.0:
     resolution: {integrity: sha512-0zJXHRAYEjM2tUfZ2DiSOHAa2aw1tisnnhU3ufD57R8iefL+DcdJyRBRyJpG+NUimDgbTI/lH+gAE1PAvV3Cgw==}
@@ -5761,7 +5801,7 @@ snapshots:
 
   boolbase@1.0.0: {}
 
-  boot-cell@2.0.0-beta.29(iterable-observer@1.1.0)(typescript@5.6.2):
+  boot-cell@2.0.0-beta.29(core-js@3.38.1)(iterable-observer@1.1.0)(typescript@5.6.2):
     dependencies:
       '@swc/helpers': 0.5.13
       classnames: 2.5.1
@@ -5769,7 +5809,7 @@ snapshots:
       iterable-observer: 1.1.0
       mobx: 6.13.3
       regenerator-runtime: 0.14.1
-      web-cell: 3.0.0(typescript@5.6.2)
+      web-cell: 3.0.0(core-js@3.38.1)(typescript@5.6.2)
       web-utility: 4.4.0(typescript@5.6.2)
     transitivePeerDependencies:
       - '@webcomponents/webcomponentsjs'
@@ -5847,14 +5887,14 @@ snapshots:
 
   caniuse-lite@1.0.30001664: {}
 
-  cell-router@3.0.0-rc.8(typescript@5.6.2):
+  cell-router@3.0.0-rc.8(core-js@3.38.1)(typescript@5.6.2):
     dependencies:
       '@swc/helpers': 0.5.13
       dom-renderer: 2.3.0(typescript@5.6.2)
       mobx: 6.13.3
       regenerator-runtime: 0.14.1
       urlpattern-polyfill: 10.0.0
-      web-cell: 3.0.0(typescript@5.6.2)
+      web-cell: 3.0.0(core-js@3.38.1)(typescript@5.6.2)
       web-utility: 4.4.0(typescript@5.6.2)
     transitivePeerDependencies:
       - '@webcomponents/webcomponentsjs'
@@ -5969,6 +6009,8 @@ snapshots:
   core-js-compat@3.38.1:
     dependencies:
       browserslist: 4.24.0
+
+  core-js@3.38.1: {}
 
   cosmiconfig@9.0.0(typescript@5.6.2):
     dependencies:
@@ -6389,6 +6431,12 @@ snapshots:
   fastq@1.17.1:
     dependencies:
       reusify: 1.0.4
+
+  fetch-blob@3.2.0:
+    dependencies:
+      node-domexception: 1.0.0
+      web-streams-polyfill: 3.3.3
+    optional: true
 
   figures@3.2.0:
     dependencies:
@@ -6880,6 +6928,16 @@ snapshots:
 
   kind-of@6.0.3: {}
 
+  koajax@3.0.2(typescript@5.6.2):
+    dependencies:
+      '@swc/helpers': 0.5.13
+      core-js: 3.38.1
+      regenerator-runtime: 0.14.1
+      web-streams-polyfill: 4.0.0
+      web-utility: 4.4.0(typescript@5.6.2)
+    transitivePeerDependencies:
+      - typescript
+
   latest-version@5.1.0:
     dependencies:
       package-json: 6.5.0
@@ -7110,6 +7168,29 @@ snapshots:
 
   minimist@1.2.8: {}
 
+  mobx-i18n@0.6.0(mobx@6.13.3)(typescript@5.6.2):
+    dependencies:
+      '@swc/helpers': 0.5.13
+      mobx: 6.13.3
+      regenerator-runtime: 0.14.1
+      web-utility: 4.4.0(typescript@5.6.2)
+    transitivePeerDependencies:
+      - typescript
+
+  mobx-restful@1.0.1(mobx@6.13.3)(typescript@5.6.2):
+    dependencies:
+      '@swc/helpers': 0.5.13
+      idb-keyval: 6.2.1
+      koajax: 3.0.2(typescript@5.6.2)
+      mobx: 6.13.3
+      native-file-system-adapter: 3.0.1
+      regenerator-runtime: 0.14.1
+      web-streams-polyfill: 4.0.0
+      web-utility: 4.4.0(typescript@5.6.2)
+    transitivePeerDependencies:
+      - jsdom
+      - typescript
+
   mobx@6.13.3: {}
 
   ms@2.1.3: {}
@@ -7134,6 +7215,10 @@ snapshots:
 
   nanoid@3.3.7: {}
 
+  native-file-system-adapter@3.0.1:
+    optionalDependencies:
+      fetch-blob: 3.2.0
+
   natural-compare@1.4.0: {}
 
   needle@3.3.1:
@@ -7145,6 +7230,9 @@ snapshots:
   node-addon-api@6.1.0: {}
 
   node-addon-api@7.1.1: {}
+
+  node-domexception@1.0.0:
+    optional: true
 
   node-fetch@2.7.0:
     dependencies:
@@ -7992,15 +8080,19 @@ snapshots:
 
   weak-lru-cache@1.2.2: {}
 
-  web-cell@3.0.0(typescript@5.6.2):
+  web-cell@3.0.0(core-js@3.38.1)(typescript@5.6.2):
     dependencies:
       '@swc/helpers': 0.5.13
+      core-js: 3.38.1
       dom-renderer: 2.3.0(typescript@5.6.2)
       mobx: 6.13.3
       regenerator-runtime: 0.14.1
       web-utility: 4.4.0(typescript@5.6.2)
     transitivePeerDependencies:
       - typescript
+
+  web-streams-polyfill@3.3.3:
+    optional: true
 
   web-streams-polyfill@4.0.0: {}
 
