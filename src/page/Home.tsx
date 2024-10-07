@@ -1,4 +1,4 @@
-import { Button, ProgressBar } from 'boot-cell';
+import { Button, ProgressBar, SpinnerBox } from 'boot-cell';
 import { observable } from 'mobx';
 import { component, observer } from 'web-cell';
 import { CustomElement } from 'web-utility';
@@ -38,11 +38,12 @@ export class HomePage extends HTMLElement implements CustomElement {
 
     render() {
         const { storeOCR, storeTTS, cameraOpened } = this;
-        const { currentPercent, resultText } = storeOCR,
+        const { uploading, currentPercent, resultText } = storeOCR;
+        const recognizing = uploading > 0,
             speaking = storeTTS.state === TTSState.Speaking;
 
         return (
-            <>
+            <SpinnerBox cover={recognizing}>
                 <header className="d-flex justify-content-around">
                     <Button
                         variant="danger"
@@ -75,7 +76,7 @@ export class HomePage extends HTMLElement implements CustomElement {
                     }
                 />
                 <article>{resultText}</article>
-            </>
+            </SpinnerBox>
         );
     }
 }

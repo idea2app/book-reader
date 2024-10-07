@@ -1,5 +1,5 @@
 import { observable } from 'mobx';
-import { getVisibleText } from 'web-utility';
+import { getVisibleText, sleep } from 'web-utility';
 
 export enum TTSState {
     Clear,
@@ -26,6 +26,8 @@ export class TTSModel {
         return voices[0]
             ? Promise.resolve(voices)
             : new Promise<SpeechSynthesisVoice[]>(resolve => {
+                  sleep(1).then(() => resolve([]));
+
                   speechSynthesis.onvoiceschanged = () =>
                       resolve(speechSynthesis.getVoices());
               });
@@ -81,36 +83,34 @@ export class TTSModel {
         }
     }
 
-    static getSelectedText(box: Element) {
+    static getSelectedText(box?: Element) {
         const range = getSelection()?.getRangeAt(0);
 
-        if (
-            range &&
-            range + '' &&
-            (!box || box.contains(range.commonAncestorContainer))
-        )
-            return [...this.walk(range)]
-                .filter(({ nodeType, parentNode }) => {
-                    if (nodeType !== 3) return;
+        if (!range?.toString() || !box?.contains(range.commonAncestorContainer))
+            throw new RangeError('No text selected');
 
-                    const { width, height } = (
-                        parentNode as Element
-                    ).getBoundingClientRect();
+        return [...this.walk(range)]
+            .filter(({ nodeType, parentNode }) => {
+                if (nodeType !== 3) return;
 
-                    return width && height;
-                })
-                .map(({ nodeValue }, index, { length }) =>
-                    nodeValue.slice(
-                        index === 0 ? range.startOffset : 0,
-                        index === length - 1 ? range.endOffset : Infinity
-                    )
+                const { width, height } = (
+                    parentNode as Element
+                ).getBoundingClientRect();
+
+                return width && height;
+            })
+            .map(({ nodeValue }, index, { length }) =>
+                nodeValue.slice(
+                    index === 0 ? range.startOffset : 0,
+                    index === length - 1 ? range.endOffset : Infinity
                 )
-                .filter(text => text.trim())
-                .join('')
-                .trim();
+            )
+            .filter(text => text.trim())
+            .join('')
+            .trim();
     }
 
-    static getReadableText(box: Element) {
+    static getReadableText(box?: Element) {
         try {
             return this.getSelectedText(box);
         } catch {

@@ -1,8 +1,11 @@
 import { computed, observable } from 'mobx';
-import { createWorker,ImageLike, LoggerMessage } from 'tesseract.js';
+import { BaseModel, toggle } from 'mobx-restful';
+import { createWorker, ImageLike, LoggerMessage } from 'tesseract.js';
 
-export class OCRModel {
-    constructor(public language = 'chi_sim') {}
+export class OCRModel extends BaseModel {
+    constructor(public language = 'chi_sim') {
+        super();
+    }
 
     @observable
     accessor currentProgress: LoggerMessage | undefined;
@@ -15,6 +18,7 @@ export class OCRModel {
     @observable
     accessor resultText: string | undefined;
 
+    @toggle('uploading')
     async recognize(image: ImageLike) {
         const worker = await createWorker(this.language, 1, {
             logger: message => (this.currentProgress = message)
