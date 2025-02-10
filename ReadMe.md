@@ -10,6 +10,7 @@ https://pager-book-reader.pages.dev/
 
 [![Open in GitHub Codespaces](https://github.com/codespaces/badge.svg)][3]
 [![Open in Gitpod](https://gitpod.io/button/open-in-gitpod.svg)][4]
+[![Open in Codeanywhere](https://codeanywhere.com/img/open-in-codeanywhere-btn.svg)](https://app.codeanywhere.com/#https://github.com/idea2app/book-reader/blob/ec25ebd3d9862a66a5db41799d3a4660017e5208/ReadMe.md)
 
 ## Technology stack
 
